@@ -22,13 +22,18 @@ const CandlestickChart = ({ data }) => {
       type: 'candlestick',
     },
     title: {
-      text: 'Candlestick Chart',
+      text: 'Historical stock price',
       align: 'left',
     },
     xaxis: {
       type: 'datetime',
+      title:{text:'date'
+      }
     },
     yaxis: {
+        title:{text:'stock price'
+
+        },
       tooltip: {
         enabled: true,
       },

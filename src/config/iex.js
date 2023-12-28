@@ -1,6 +1,6 @@
 export const iex={
 
-    api_token:'pk_1b0a4b4ca9f444eca58c1e39a9b72734',
+    api_token:'pk_cbe73806cd12468f9f63f14e9a323257',
     base_url:'https://api.iex.cloud/v1/'
 };
 
