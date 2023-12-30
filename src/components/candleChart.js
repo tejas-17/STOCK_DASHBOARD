@@ -40,7 +40,10 @@ const CandlestickChart = ({ data }) => {
     },
   };
 
-  return <Chart options={chartOptions} series={chartSeries} type="candlestick" height={350} />;
+  // return <Chart options={chartOptions} series={chartSeries} type="candlestick" height={350} />;
+  // Add a className to the Chart component
+return <Chart className="custom-chart" options={chartOptions} series={chartSeries} type="candlestick" height={700} />;
+
 };
 
 export default CandlestickChart;

@@ -6,9 +6,8 @@ const IntradayChart = ({ data }) => {
   const [chartData, setChartData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Update chartData when data prop changes
   useEffect(() => {
-    setIsLoading(true); // Set loading state to true when new data is received
+    setIsLoading(true);
 
     if (data && data.length) {
       const formattedData = data
@@ -16,13 +15,13 @@ const IntradayChart = ({ data }) => {
         .map((item) => ({
           x: new Date(item.date + ' ' + item.minute).getTime(),
           y: [item.open, item.high, item.low, item.close],
+          closingPrice: item.close, // Add closing price to the data
         }));
       setChartData(formattedData);
-      setIsLoading(false); // Set loading state to false when data is processed
+      setIsLoading(false);
     }
   }, [data]);
 
-  // Check if data is available
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -33,29 +32,47 @@ const IntradayChart = ({ data }) => {
 
   const chartOptions = {
     chart: {
-      type: 'candlestick',
-      height: 350,
+      type: 'line', // Change to 'line' for the line series
+      height: 500,
     },
     xaxis: {
       type: 'datetime',
       labels: {
         formatter: function (val) {
-          return new Date(val).toLocaleTimeString(); // Format the time on the x-axis
+          return new Date(val).toLocaleTimeString();
         },
       },
     },
-    yaxis: {
-      title: {
-        text: 'Stock Price',
+    yaxis: [
+      {
+        title: {
+          text: 'Stock Price',
+        },
       },
-    },
+      {
+        opposite: true,
+        title: {
+          text: 'Closing Price',
+        },
+      },
+    ],
     title: {
       text: 'Intraday Price Chart',
       align: 'left',
     },
   };
 
-  return <Chart options={chartOptions} series={[{ data: chartData }]} type="candlestick" height={350} />;
+  return (
+    <Chart
+      options={chartOptions}
+      series={[
+        { data: chartData, type: 'candlestick' }, // Candlestick series
+        { data: chartData.map((item) => ({ x: item.x, y: item.closingPrice })), name: 'Closing Price', type: 'line' }, // Line series for closing prices
+      ]}
+      type="candlestick"
+      height={800}
+    />
+  );
 };
 
 export default IntradayChart;

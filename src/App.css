@@ -1,14 +1,26 @@
-/* styles.css */
-
-/* Body styling */
-
-
-/* Body styling */
 /* App.css */
+
+/* Body styling */
 body {
   font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #495057;
 }
 
+/* Container styling */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header styling */
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  color: #007bff;
+}
+
+/* Sidebar styling */
 .sidebar {
   height: 100%;
   width: 200px;
@@ -70,69 +82,80 @@ body {
   display: block;
 }
 
-
-/* Body styling */
-
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  color: #495057;
-}
-
-/* Container styling */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 /* Table styling */
+.table-container {
+  margin-top: 20px;
+  max-width: 600px; /* Adjust the max-width as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .table th,
 .table td {
-  padding: 12px;
+  padding: 16px;
   text-align: left;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #ddd;
 }
 
 .table th {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  text-transform: uppercase;
 }
 
-/* Chart container styling */
-.chart-container {
-  max-width: 600px;
-  margin-top: 10px;
+tbody tr:hover {
+  background-color: #f0f8ff;
+  transform: scale(1.02);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Header styling */
-h1 {
-  text-align: center;
-  margin-top: 40px;
-  color: #007bff;
+/* Charts styling */
+.charts-container-card .sector-chart-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* StockRow component styling */
-tr {
-  transition: background-color 0.3s;
+.charts-container {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
 }
 
-tr:hover {
-  background-color: #f0f0f0;
+.chart-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+/* App.css */
+.heading {
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 0 20px;
-  }
+.heading:hover {
+  color: #007bff; /* Change the color to your desired hover color */
 }
+
+
+
+/* Your existing styles ... */
