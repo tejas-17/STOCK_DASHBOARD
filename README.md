@@ -6,7 +6,7 @@ Welcome to our cutting-edge Stock Market App, where financial empowerment meets 
 
 
 
-## Languge : React Native
+## Languge : React JS
 
 ## Project Links
 
@@ -61,10 +61,15 @@ Follow these steps to run the Blog App locally:
 
    ```bash
     npx start
-   ``` 
-
+   ```
+   
+ ## passwqord
+ username=admin
+ pasowrd=admin
+ 
 
 ## Usage
+
 
 - **Explore Stock Data**: Use the app to explore stock categories, sectors, and real-time data visualization.
 - **Personalize Dashboard**:Customize your dashboard with preferred stock selections, watchlists, and charts.
